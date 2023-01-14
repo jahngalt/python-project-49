@@ -1,12 +1,14 @@
-import prompt
 import random
+import prompt
 
 def welcome_user():
+    """Function printing welcome user message after entering name."""
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    return name 
+    return name
 
-def game_core(someName):
+def game_core(some_name):
+    """Ask random question while score < 3"""
     score = 0
     while score < 3:
         i = random.randint(0, 100)
@@ -19,8 +21,9 @@ def game_core(someName):
             score += 1
             print('Correct!')
         else:
-            print(f'\'yes\' is wrong answer ;(. Correct answer was \'no\'.\nLet\'s try again, {someName}!')
+            print(f'\'yes\' is wrong answer ;(. Correct \
+            answer was \'no\'.\nLet\'s try again, {some_name}!')
             break
     if score >= 3:
-        print(f"Congratulations, {someName}!")
+        print(f"Congratulations, {some_name}!")
             
